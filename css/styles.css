@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Mono:wght@500&display=swap");
+
+html,
+body {
+	background: #4287f5;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: black;
+	line-height: 1.5rem;
+}
+h1 {
+	text-align: center;
+	margin-top: 20%;
+}
+
+span {
+	color: blue;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	display: list-item;
+}
+
+/*-------- sidebar --------*/
+
+.sidebar-header {
+	font-family: "Roboto Mono", monospace;
+	display: flex;
+	padding-left: 1rem;
+}
+
+button {
+	border: transparent;
+	font-size: 1.6rem;
+	color: red;
+	position: absolute;
+	right: 2rem;
+	top: 1.2rem;
+}
+
+button:hover {
+	animation: rotates 0.5s ease-in-out 1;
+}
+@keyframes rotates {
+	0% {
+		transform: rotate(90deg);
+	}
+	50% {
+		transform: rotate(360deg);
+	}
+
+	100% {
+		transform: rotate(90deg);
+	}
+}
+.sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #f2f2f2;
+	box-shadow: 0 2px 2px 0 gray;
+	border-radius: 0 1rem 1rem 0;
+	transform: translate(-100%);
+	/* translate -100 pulls it all the way inside when class show-sidebar is unavailable */
+}
+
+/* only sows when the class is available via toggle translate(0) means it goes back to default */
+.show-sidebar {
+	transform: translate(0);
+	/* i would have used display: none */
+}
+
+.sidebar-toggle {
+	position: fixed;
+	top: 2rem;
+	right: 3rem;
+	font-size: 2rem;
+	color: blue;
+	background: transparent;
+	border-color: transparent;
+	transition: all 0.5s linear;
+	cursor: pointer;
+	animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.5);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+/* -------links----------- */
+
+.links {
+	transition: all 0.3s linear;
+	height: 70%;
+}
+
+.links a {
+	color: black;
+	text-decoration: none;
+	font-size: 1.2rem;
+	font-family: "Open Sans", sans-serif;
+}
+
+.links li {
+	padding: 1.2rem 1rem;
+	margin-left: -2.5rem;
+	transition: all 0.3s linear;
+}
+.links li:hover {
+	background: cornflowerblue;
+	padding-left: 2rem;
+	/* when you hover aound it the padding shift and the transition allows it smoothly */
+}
+
+.social-icons {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.social-icons a {
+	color: blue;
+	margin: 1.8rem;
+	font-size: 1.3rem;
+}
+
+/* big/ default screen up is small screen*/
+@media (min-width: 680px) {
+	/* body {
+		background: white;
+	} */
+	.sidebar {
+		width: 400px;
+		/* on a bigger screen the sidebars width is this on a small er screen it covers the entire screen*/
+	}
+
+	.links {
+		display: flex;
+		flex-direction: column;
+		font-family: "Open Sans", sans-serif;
+	}
+
+	.links li {
+		/* padding: 1.2rem 1rem; */
+		margin-left: -2.5rem;
+	}
+	.links li:hover {
+		background: cornflowerblue;
+		transition: all 0.3s linear;
+	}
+
+	.links a:hover {
+		font-weight: bold;
+		color: blue;
+	}
+	.social-icons {
+		display: flex;
+		font-size: 1.3em;
+		padding-right: 1.8rem;
+		padding-bottom: 2rem;
+	}
+
+	.social-icons a {
+		color: blue;
+	}
+
+	li {
+		margin: 1em;
+	}
+
+	.social-icons li {
+		margin: 0.3rem;
+	}
+}
