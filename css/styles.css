@@ -9,11 +9,11 @@ body {
 	color: black;
 	line-height: 1.5rem;
 }
-h1 {
+
+h1{
 	text-align: center;
 	margin-top: 20%;
 }
-
 span {
 	color: blue;
 }
@@ -68,13 +68,12 @@ button:hover {
 	box-shadow: 0 2px 2px 0 gray;
 	border-radius: 0 1rem 1rem 0;
 	transform: translate(-100%);
-	/* translate -100 pulls it all the way inside when class show-sidebar is unavailable */
 }
 
-/* only sows when the class is available via toggle translate(0) means it goes back to default */
+
 .show-sidebar {
 	transform: translate(0);
-	/* i would have used display: none */
+
 }
 
 .sidebar-toggle {
@@ -125,7 +124,7 @@ button:hover {
 .links li:hover {
 	background: cornflowerblue;
 	padding-left: 2rem;
-	/* when you hover aound it the padding shift and the transition allows it smoothly */
+
 }
 
 .social-icons {
@@ -139,14 +138,11 @@ button:hover {
 	font-size: 1.3rem;
 }
 
-/* big/ default screen up is small screen*/
+
 @media (min-width: 680px) {
-	/* body {
-		background: white;
-	} */
 	.sidebar {
 		width: 400px;
-		/* on a bigger screen the sidebars width is this on a small er screen it covers the entire screen*/
+
 	}
 
 	.links {
@@ -156,7 +152,6 @@ button:hover {
 	}
 
 	.links li {
-		/* padding: 1.2rem 1rem; */
 		margin-left: -2.5rem;
 	}
 	.links li:hover {
